@@ -42,6 +42,9 @@ NO need screenshots
 
 == Changelog ==
 
+= 0.3 =
+* fix bug.
+
 = 0.2 =
 * Add more filds to edit wiget.
 
@@ -49,6 +52,9 @@ NO need screenshots
 * First version.
 
 == Upgrade Notice ==
+
+= 0.2 =
+fix separating text fild
 
 = 0.2 =
 Now you can place more information and ,for example, separate it with design...
