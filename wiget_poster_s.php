@@ -3,7 +3,7 @@
  *Plugin Name: Wiget Poster S
  *Plugin URI: http://res.allnetsoft.ru/wiget-poster-s/
  *Description: Plugin that allow post you wiget.
- *Version: 0.1
+ *Version: 0.2
  *Author: Deer
  */
 
@@ -23,6 +23,8 @@ class WigetPosterS_Widget extends WP_Widget {
 		extract( $args );
 		echo $before_title.$instance['title'].$after_title;
 		echo $instance['text'];
+		echo $instance['second_text'];
+		echo $instance['third_text'];
 	}
 
 	function update($new_instance, $old_instance) {
@@ -32,6 +34,8 @@ class WigetPosterS_Widget extends WP_Widget {
 	function form($instance) {
 		$title = esc_attr($instance['title']);
 		$text = esc_attr($instance['text']);
+		$second_text = $instance['second_text'];
+		$third_text = $instance['third_text'];
 
 		echo '
 		<p><label for="'.$this->get_field_id('title').'"> '._e('Title:').'</label>
@@ -43,6 +47,16 @@ class WigetPosterS_Widget extends WP_Widget {
 		<input class="widefat" id="'.$this->get_field_id('text').'"
 		name="'.$this->get_field_name('text').'" type="text"
 		value="'.$text.'" /></p>';
+		echo '
+		<p><label for="'.$this->get_field_id('second_text').'"> '._e('Second Text:').'</label>
+		<input class="widefat" id="'.$this->get_field_id('second_text').'"
+		name="'.$this->get_field_name('second_text').'" type="text"
+		value="'.$second_text.'" /></p>';
+		echo '
+		<p><label for="'.$this->get_field_id('third_text').'"> '._e('Third Text:').'</label>
+		<input class="widefat" id="'.$this->get_field_id('third_text').'"
+		name="'.$this->get_field_name('third_text').'" type="text"
+		value="'.$third_text.'" /></p>';
 	}
 
 }
