@@ -1,7 +1,7 @@
 === Wiget Poster S ===
 Contributors: zwooll, deer
 Donate link: http://res.allnetsoft.ru/wiget-poster-s/
-Tags: wigets, self
+Tags: wigets, self, wiget, Wiget, post, s
 Requires at least: 2.0.2
 Tested up to: 2.9.2
 Stable tag: 4.3
