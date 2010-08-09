@@ -1,7 +1,7 @@
 === Wiget Poster S ===
 Contributors: zwooll, deer
 Donate link: http://res.allnetsoft.ru/wiget-poster-s/
-Tags: wigets, self, wiget, Wiget, post, s
+Tags: wigets, self, wiget, Wiget, post, s, widgets, self, widget, Widget
 Requires at least: 2.0.2
 Tested up to: 2.9.2
 Stable tag: 4.3
@@ -10,7 +10,7 @@ This plugin is simple allow you creating own mini wiget.
 
 == Description ==
 
-This plugin is simple allow you creating own mini wiget. And is a simple example of creating a widget in the plugin(usefull for developers).
+This plugin is simple allow you creating own mini widget. And is a simple example of creating a widget in the plugin(usefull for developers).
 
 A few notes about the sections above:
 
@@ -28,7 +28,7 @@ This section describes how to install the plugin and get it working.
 
 e.g.
 
-1. Upload `wiget_poster_s.php` to the `/wp-content/plugins/` directory
+1. Upload `widget_poster_s.php` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
 == Frequently Asked Questions ==
@@ -46,7 +46,7 @@ NO need screenshots
 * fix bug.
 
 = 0.2 =
-* Add more filds to edit wiget.
+* Add more filds to edit widget.
 
 = 0.1 =
 * First version.

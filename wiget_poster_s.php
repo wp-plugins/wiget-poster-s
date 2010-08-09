@@ -2,7 +2,7 @@
 /**
  *Plugin Name: Wiget Poster S
  *Plugin URI: http://res.allnetsoft.ru/wiget-poster-s/
- *Description: Plugin that allow post you wiget.
+ *Description: Plugin that allow post you widget.
  *Version: 0.3
  *Author: Deer
  */
@@ -21,15 +21,15 @@ class WigetPosterS_Widget extends WP_Widget {
 
 	function widget($args, $instance) {
 		extract( $args );
-		echo '<div class = "wiget_poster_s" id = "'.$this->id.'">';
+		echo '<div class = "widget_poster_s" id = "'.$this->id.'">';
 			if($instance['title'] != ''){
-				echo '<div class = "wiget_poster_s-title">'.$instance['title'].'</div>';
+				echo '<div class = "widget_poster_s-title">'.$instance['title'].'</div>';
 			}
 			if(($instance['text'] != '')||($instance['second_text'] != '')||($instance['third_text'] != '')){
-				echo '<div class = "wiget_poster_s-textfilds">';
-				if ($instance['text'] != '') echo '<div class = "wiget_poster_s-textfilds-text">'.$instance['text'].'</div>';
-				if ($instance['second_text'] != '') echo '<div class = "wiget_poster_s-textfilds-second_text">'.$instance['second_text'].'</div>';
-				if ($instance['third_text'] != '') echo '<div class = "wiget_poster_s-textfilds-third_text">'.$instance['third_text'].'</div>';
+				echo '<div class = "widget_poster_s-textfilds">';
+				if ($instance['text'] != '') echo '<div class = "widget_poster_s-textfilds-text">'.$instance['text'].'</div>';
+				if ($instance['second_text'] != '') echo '<div class = "widget_poster_s-textfilds-second_text">'.$instance['second_text'].'</div>';
+				if ($instance['third_text'] != '') echo '<div class = "widget_poster_s-textfilds-third_text">'.$instance['third_text'].'</div>';
 				echo '</div>';
 			}
 		echo '</div>';
