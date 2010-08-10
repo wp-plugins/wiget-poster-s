@@ -53,7 +53,7 @@ NO need screenshots
 
 == Upgrade Notice ==
 
-= 0.2 =
+= 0.3 =
 fix separating text fild
 
 = 0.2 =
