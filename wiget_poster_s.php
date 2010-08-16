@@ -27,8 +27,16 @@ class WigetPosterS_Widget extends WP_Widget {
 		echo '<a href="'.$instance['href'].'" ';// banner href....
 
 		if($instance['a_class'] != '') echo 'class="'.$instance['a_class'].'"';//class of tag <a>
+		
+		if($instance['a_target'] != '') {
+			echo ' target = "'.$instance['a_target'].'"';
+		}else{
+			echo ' target = "_blank"';
+		}
+	
+		echo '>';
 
-		echo '><img src="'.$instance['src'].'" width="'.$instance['img_width'].'" height="'.$instance['img_height'].'"';// src... width... height...
+		echo '<img src="'.$instance['src'].'" width="'.$instance['img_width'].'" height="'.$instance['img_height'].'"';// src... width... height...
 
 		if($instance['img_border'] != ''){//if set border
 			echo ' border="'.$instance['img_border'].'"';
@@ -53,6 +61,7 @@ class WigetPosterS_Widget extends WP_Widget {
 		$div = esc_attr($instance['div']);
 		$href = esc_attr($instance['href']);
 		$a_class = esc_attr($instance['a_class']);
+		$a_target = esc_attr($instance['a_target']);
 		$src = esc_attr($instance['src']);
 		$img_width = esc_attr($instance['img_width']);
 		$img_height = esc_attr($instance['img_height']);
@@ -75,6 +84,10 @@ class WigetPosterS_Widget extends WP_Widget {
 		<input class="widefat" id="'.$this->get_field_id('a_class').'"
 		name="'.$this->get_field_name('a_class').'" type="text"
 		value="'.$a_class.'" /></p>';
+		echo '		
+		<p><label for="'.$this->get_field_id('a_target').'"> '._e('Target of tag "a"(live empty and then target = "_blank"):').'</label><input class="widefat" id="'.$this->get_field_id('a_target').'"
+		name="'.$this->get_field_name('a_target').'" type="text"
+		value="'.$a_target.'" /></p>';
 		echo '
 		<p><label for="'.$this->get_field_id('src').'"> '._e('Path to you banner imge(example: http://test.com/image/banner.gif):').'</label>
 		<input class="widefat" id="'.$this->get_field_id('src').'"
