@@ -4,7 +4,7 @@
  *Description: Plugin that allow post you wiget.
  *Version: 0.2
  *Author: Deer
- *Author URI: mailto:zwooee4@yahoo.com
+ *Author URI: mailto:zwooee6@yahoo.com
  */
 
 /**
