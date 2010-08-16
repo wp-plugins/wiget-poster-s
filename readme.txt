@@ -1,6 +1,6 @@
 === Wiget Poster S ===
 Contributors: zwooll, deer
-Donate link: mailto:zwooee4@yahoo.com
+Donate link: mailto:zwooee6@yahoo.com
 Tags: wigets, self, wiget, Wiget, post, s, widgets, self, widget, Widget, banner
 Requires at least: 2.0.2
 Tested up to: 3.0.1
@@ -13,7 +13,7 @@ This last version(0.3.2) is simple example of how my plugin can be useful.
 
 This plugin is simple allow you creating own mini widget. And is a simple example of creating a widget in the plugin(usefull for developers). Now in version 0.3.2 you can post you image banner as widget... use "div" tag for lockate you banner on you page...
 
-P.S. you can connect with my by emailing on: zwooee4@yahoo.com
+P.S. you can connect with my by emailing on: zwooee6@yahoo.com
 
 == Installation ==
 

@@ -4,7 +4,7 @@
  *Description: Plugin that allow post you widget with you banner.
  *Version: 0.3.2
  *Author: Deer
- *Author URI: mailto:zwooee4@yahoo.com
+ *Author URI: mailto:zwooee6@yahoo.com
  */
 
 /**
