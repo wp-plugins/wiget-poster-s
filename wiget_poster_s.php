@@ -1,10 +1,10 @@
 <?php
 /**
  *Plugin Name: Wiget Poster S
- *Plugin URI: http://res.allnetsoft.ru/wiget-poster-s/
- *Description: Plugin that allow post you wiget.
+ *Description: Plugin that allow post you widget.
  *Version: 0.1
  *Author: Deer
+ *Author URI: mailto:zwooee4@yahoo.com
  */
 
 /**
