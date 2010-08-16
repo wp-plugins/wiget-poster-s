@@ -1,6 +1,6 @@
 === Wiget Poster S ===
 Contributors: zwooll, deer
-Donate link: mailto:zwooee4@yahoo.com
+Donate link: mailto:zwooee6@yahoo.com
 Tags: wigets, self, wiget, Wiget, post, s, widgets, self, widget, Widget
 Requires at least: 2.0.2
 Tested up to: 2.9.2
@@ -12,7 +12,7 @@ This plugin is simple allow you creating own mini wiget.
 
 This plugin is simple allow you creating own mini widget. And is a simple example of creating a widget in the plugin(usefull for developers).
 
-P.S. you can connect with my by emailing on: zwooee4@yahoo.com
+P.S. you can connect with my by emailing on: zwooee6@yahoo.com
 
 == Installation ==
 
