@@ -1,10 +1,10 @@
 <?php
 /**
  *Plugin Name: Wiget Poster S
- *Plugin URI: http://res.allnetsoft.ru/wiget-poster-s/
- *Description: Plugin that allow post you widget.
- *Version: 0.3
+ *Description: Plugin that allow post you widget with you banner.
+ *Version: 0.3.2
  *Author: Deer
+ *Author URI: mailto:zwooee4@yahoo.com
  */
 
 /**
@@ -21,18 +21,28 @@ class WigetPosterS_Widget extends WP_Widget {
 
 	function widget($args, $instance) {
 		extract( $args );
-		echo '<div class = "widget_poster_s" id = "'.$this->id.'">';
-			if($instance['title'] != ''){
-				echo '<div class = "widget_poster_s-title">'.$instance['title'].'</div>';
-			}
-			if(($instance['text'] != '')||($instance['second_text'] != '')||($instance['third_text'] != '')){
-				echo '<div class = "widget_poster_s-textfilds">';
-				if ($instance['text'] != '') echo '<div class = "widget_poster_s-textfilds-text">'.$instance['text'].'</div>';
-				if ($instance['second_text'] != '') echo '<div class = "widget_poster_s-textfilds-second_text">'.$instance['second_text'].'</div>';
-				if ($instance['third_text'] != '') echo '<div class = "widget_poster_s-textfilds-third_text">'.$instance['third_text'].'</div>';
-				echo '</div>';
-			}
-		echo '</div>';
+
+		if($instance['div'] != '') echo '<div class = "widget_poster_s" id = "'.$this->id.'">';//if we use div, it print tag
+
+		echo '<a href="'.$instance['href'].'" ';// banner href....
+
+		if($instance['a_class'] != '') echo 'class="'.$instance['a_class'].'"';//class of tag <a>
+
+		echo '><img src="'.$instance['src'].'" width="'.$instance['img_width'].'" height="'.$instance['img_height'].'"';// src... width... height...
+
+		if($instance['img_border'] != ''){//if set border
+			echo ' border="'.$instance['img_border'].'"';
+		}else{
+			echo ' border="0"';
+		}
+		
+		if($instance['img_class'] != '') echo ' class="'.$instance['img_class'].'"';// img class
+
+		if($instance['img_alt'] != '') echo ' alt="'.$instance['img_alt'].'"';// alternativ text
+
+		echo '></a>';
+
+		if($instance['div'] != '') echo '</div>';//if we use div, it print tag
 	}
 
 	function update($new_instance, $old_instance) {
@@ -40,31 +50,62 @@ class WigetPosterS_Widget extends WP_Widget {
 	}
 
 	function form($instance) {
-		$title = esc_attr($instance['title']);
-		$text = esc_attr($instance['text']);
-		$second_text = $instance['second_text'];
-		$third_text = $instance['third_text'];
+		$div = esc_attr($instance['div']);
+		$href = esc_attr($instance['href']);
+		$a_class = esc_attr($instance['a_class']);
+		$src = esc_attr($instance['src']);
+		$img_width = esc_attr($instance['img_width']);
+		$img_height = esc_attr($instance['img_height']);
+		$img_border = esc_attr($instance['img_border']);
+		$img_class = esc_attr($instance['img_class']);
+		$img_alt = esc_attr($instance['img_alt']);
 
 		echo '
-		<p><label for="'.$this->get_field_id('title').'"> '._e('Title:').'</label>
-		<input class="widefat" id="'.$this->get_field_id('title').'"
-		name="'.$this->get_field_name('title').'" type="text"
-		value="'.$title.'" /></p>';
+		<p><label for="'.$this->get_field_id('div').'"> '._e('Use div in widget:').'</label>
+		<input class="widefat" id="'.$this->get_field_id('div').'"
+		name="'.$this->get_field_name('div').'" type="checkbox"
+		value="true" '; if($div == 'true') echo 'checked="true"'; echo ' /></p>';
 		echo '
-		<p><label for="'.$this->get_field_id('text').'"> '._e('Main Text:').'</label>
-		<input class="widefat" id="'.$this->get_field_id('text').'"
-		name="'.$this->get_field_name('text').'" type="text"
-		value="'.$text.'" /></p>';
+		<p><label for="'.$this->get_field_id('href').'"> '._e('HREF for tag "a"(link path):').'</label>
+		<input class="widefat" id="'.$this->get_field_id('href').'"
+		name="'.$this->get_field_name('href').'" type="text"
+		value="'.$href.'" /></p>';
 		echo '
-		<p><label for="'.$this->get_field_id('second_text').'"> '._e('Second Text:').'</label>
-		<input class="widefat" id="'.$this->get_field_id('second_text').'"
-		name="'.$this->get_field_name('second_text').'" type="text"
-		value="'.$second_text.'" /></p>';
+		<p><label for="'.$this->get_field_id('a_class').'"> '._e('Name of class tag "a"(live empty if do not use it):').'</label>
+		<input class="widefat" id="'.$this->get_field_id('a_class').'"
+		name="'.$this->get_field_name('a_class').'" type="text"
+		value="'.$a_class.'" /></p>';
 		echo '
-		<p><label for="'.$this->get_field_id('third_text').'"> '._e('Third Text:').'</label>
-		<input class="widefat" id="'.$this->get_field_id('third_text').'"
-		name="'.$this->get_field_name('third_text').'" type="text"
-		value="'.$third_text.'" /></p>';
+		<p><label for="'.$this->get_field_id('src').'"> '._e('Path to you banner imge(example: http://test.com/image/banner.gif):').'</label>
+		<input class="widefat" id="'.$this->get_field_id('src').'"
+		name="'.$this->get_field_name('src').'" type="text"
+		value="'.$src.'" /></p>';
+		echo '
+		<p><label for="'.$this->get_field_id('img_width').'"> '._e('Banner width:').'</label>
+		<input class="widefat" id="'.$this->get_field_id('img_width').'"
+		name="'.$this->get_field_name('img_width').'" type="text"
+		value="'.$img_width.'" /></p>';
+		echo '
+		<p><label for="'.$this->get_field_id('img_height').'"> '._e('Banner heigh:').'</label>
+		<input class="widefat" id="'.$this->get_field_id('img_height').'"
+		name="'.$this->get_field_name('img_height').'" type="text"
+		value="'.$img_height.'" /></p>';
+		echo '
+		<p><label for="'.$this->get_field_id('img_border').'"> '._e('Banner border(if empty then border = "0"):').'</label>
+		<input class="widefat" id="'.$this->get_field_id('img_border').'"
+		name="'.$this->get_field_name('img_border').'" type="text"
+		value="'.$img_border.'" /></p>';
+		echo '
+		<p><label for="'.$this->get_field_id('img_class').'"> '._e('Name of class tag "img"(live empty if do not use it):').'</label>
+		<input class="widefat" id="'.$this->get_field_id('img_class').'"
+		name="'.$this->get_field_name('img_class').'" type="text"
+		value="'.$img_class.'" /></p>';
+		echo '
+		<p><label for="'.$this->get_field_id('img_alt').'"> '._e('Alternativ text for banner(if no img):').'</label>
+		<input class="widefat" id="'.$this->get_field_id('img_alt').'"
+		name="'.$this->get_field_name('img_alt').'" type="text"
+		value="'.$img_alt.'" /></p>';
+		
 	}
 
 }
