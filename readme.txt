@@ -1,6 +1,6 @@
 === Wiget Poster S ===
 Contributors: zwooll, deer
-Donate link: http://res.allnetsoft.ru/wiget-poster-s/
+Donate link: mailto:zwooee4@yahoo.com
 Tags: wigets, self
 Requires at least: 2.0.2
 Tested up to: 2.9.2
@@ -11,6 +11,8 @@ This plugin is simple allow you creating own mini wiget.
 == Description ==
 
 This plugin is simple allow you creating own mini wiget. And is a simple example of creating a widget in the plugin(usefull for developers).
+
+P.S. you can connect with my by emailing on: zwooee4@yahoo.com
 
 == Installation ==
 
